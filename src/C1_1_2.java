@@ -30,7 +30,7 @@ public class C1_1_2 {
 
     public int pop() {
         if (this.stackMin.isEmpty()) {
-            new RuntimeException("your stack is empty");
+           throw new RuntimeException("your stack is empty");
         }
         this.stackMin.pop();
         return this.stackData.pop();
@@ -38,7 +38,7 @@ public class C1_1_2 {
 
     public int getMin() {
         if (this.stackMin.isEmpty()) {
-            new RuntimeException("your stack is empty");
+           throw new RuntimeException("your stack is empty");
         }
         return this.stackMin.peek();
     }

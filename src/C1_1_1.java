@@ -50,7 +50,7 @@ public class C1_1_1 {
  * 使用了两个栈，一个是stackData，stackMin，前者是用来push和pop的主体栈，
  * 后者是用来获取当前栈中最小值的辅助栈。
  * push：在给stackData push的时候，判断stackMin是否有值，没有的话直接给stackMin也push
- * 如果给stackData push的值不大于stackMin的栈顶值，那么同样给stackMin push（保证了stackMin里的数据是由栈底到栈定是递减的过程，
+ * 如果给stackData push的值小于等于stackMin的栈顶值，那么同样给stackMin push（保证了stackMin里的数据是由栈底到栈定是递减的过程，
  * 也就是它栈顶元素一定是stackData里的最小值）
  * 否则不给stackMin做任何操作
  * <p>
@@ -58,6 +58,6 @@ public class C1_1_1 {
  * stackData对应的栈定元素必然大于等于stackMin的栈顶元素。
  * 因为我们出栈操作是：给stackData出栈后，如果这个元素等于stackMin的栈顶元素（也就是当前栈里的最小值），那么给stackMin出栈，
  * 因为栈里的最小值出栈了，所以这样可以保证了stackMin栈顶对stackData的有效性。
- * <p>
+ * </p>
  * getMin：由上可知，stackMin的栈顶元素即就是数据栈里的最小值，直接peek即可
  */
