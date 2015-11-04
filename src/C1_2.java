@@ -24,7 +24,7 @@ public class C1_2 {
             throw new RuntimeException("the queue is empty");
         } else if (this.stackPoll.isEmpty()){
             while(this.stackAdd.isEmpty()){
-                this.stackPoll.push(this.stackAdd.pop();
+                this.stackPoll.push(this.stackAdd.pop());
             }
         }
         return this.stackPoll.pop();
@@ -35,7 +35,7 @@ public class C1_2 {
             throw new RuntimeException("the queue is empty");
         } else if (this.stackPoll.isEmpty()){
             while(this.stackAdd.isEmpty()){
-                this.stackPoll.push(this.stackAdd.pop();
+                this.stackPoll.push(this.stackAdd.pop());
             }
         }
         return this.stackPoll.peek();
