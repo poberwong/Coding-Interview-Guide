@@ -17,7 +17,7 @@ public class C1_5 {
              * 此时倒回stack的部分为逆序.
              * 或者这样理解,将cur插入到help栈中合适的位置
              */
-            while (!help.isEmpty() && cur > help.peek()) {
+            while (!help.isEmpty() && cur > help.peek()) {//此处原书有误,应该是>,而非<
                 stack.push(help.pop());
             }
             help.push(cur);
