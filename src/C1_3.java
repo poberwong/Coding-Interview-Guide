@@ -1,3 +1,4 @@
+import java.nio.file.StandardWatchEventKinds;
 import java.util.Stack;
 
 /**
@@ -27,6 +28,11 @@ public class C1_3 {
         }
     }
 
+    /**
+     * 将栈中的元素在递归的过程中是使用getAndRemoveLastElement在每一层中都
+     * 临时存入栈低元素,然后在回调的过程中再push压栈,起到一个转置的作用
+     * @param stack
+     */
     public static void reverse(Stack<Integer> stack){
         if (stack.isEmpty()) {
             return;
@@ -34,6 +40,42 @@ public class C1_3 {
         int i = getAndRemoveLastElement(stack);
         reverse(stack);
         stack.push(i);
+    }
+
+    /**
+     * 使用for循环来遍历stack
+     */
+    public static <T> void traverseFor(Stack<T> stack){
+        int sum = stack.size();
+        for (int i= 0; i< sum; i++){
+            System.out.println(stack.pop());
+        }
+    }
+
+    /**
+     * 使用递归来实现对栈的遍历
+     * 这里实现了栈的正序和逆序的遍历
+     * @param stack
+     * @param <T>
+     */
+    public static <T> void traverseRecursion(Stack<T> stack){
+        T i = stack.pop();
+        System.out.println(i);
+        if (stack.isEmpty()){
+            return;
+        }
+        traverseRecursion(stack);
+        System.out.println(i);
+    }
+
+    public static void main(String[] args){
+        Stack<Integer> stack= new Stack<>();
+        for (int i = 0; i < 10; i++) {
+            stack.push(i);
+        }
+        System.out.println(stack.toString());
+//        traverseFor(stack);
+        traverseRecursion(stack);
     }
 }
 
